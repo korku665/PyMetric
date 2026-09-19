@@ -1,0 +1,43 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Targets Up",
+      "id": 1,
+      "gridPos": {"h": 6, "w": 6, "x": 0, "y": 0},
+      "targets": [{"expr": "sum(pymetric_target_up)", "refId": "A"}]
+    },
+    {
+      "type": "stat",
+      "title": "Average Latency (ms)",
+      "id": 2,
+      "gridPos": {"h": 6, "w": 6, "x": 6, "y": 0},
+      "targets": [{"expr": "avg(pymetric_latency_ms)", "refId": "A"}]
+    },
+    {
+      "type": "timeseries",
+      "title": "Latency by Target",
+      "id": 3,
+      "gridPos": {"h": 9, "w": 12, "x": 0, "y": 6},
+      "targets": [{"expr": "pymetric_latency_ms", "legendFormat": "{{name}}", "refId": "A"}]
+    },
+    {
+      "type": "timeseries",
+      "title": "Up / Down",
+      "id": 4,
+      "gridPos": {"h": 9, "w": 12, "x": 12, "y": 6},
+      "targets": [{"expr": "pymetric_target_up", "legendFormat": "{{name}}", "refId": "A"}]
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": ["pymetric", "uptime"],
+  "templating": {"list": []},
+  "time": {"from": "now-1h", "to": "now"},
+  "timezone": "browser",
+  "title": "PyMetric Overview",
+  "uid": "pymetric-overview",
+  "version": 1
+}
